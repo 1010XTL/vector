@@ -61,6 +61,20 @@ namespace std {
 			this->_reserveSize = new _Ty[Size];
 			this->_reserve = Size;
 		}
+		int find(_Ty val) noexcept{
+			for (int i = 0; i < this->_Size; i++){
+				if (this->_vec[i] == val){
+					return i;
+				}
+			}
+		}
+		int rfind(_Ty val) noexcept {
+			for (int i = this->_Size; i > 0; i--){
+				if (this->_vec[i] == val){
+					return i;
+				}
+			}
+		}
 		void push_front(_Ty val) noexcept{
 			this->insert(0, val);
 		}
