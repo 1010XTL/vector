@@ -3,7 +3,7 @@
 #ifndef _MY_VECTOR_HPP_
 #define _MY_VECTOR_HPP_
 namespace std {
-	class VEC_EXCEPTION : public std::exception //¶¨Òå´íÎóÀà£¬ÎªÒÔºóµÄÅ×³ö´íÎó×ö×¼±¸
+	class VEC_EXCEPTION : public std::exception //å®šä¹‰é”™è¯¯ç±»ï¼Œä¸ºä»¥åŽçš„æŠ›å‡ºé”™è¯¯åšå‡†å¤‡
 	{
 	public:
 		const char* what() const noexcept{
@@ -90,7 +90,7 @@ namespace std {
 			this->_vec[this->_Size] = last;
 			this->_Size++;
 		}
-		_Ty operator[](int index){
+		_Ty& operator[](int index){
 			if (index >= this->_Size){
 				throw VEC_EXCEPTION();
 			}
@@ -137,6 +137,4 @@ namespace std {
 		_Ty* _reserveSize;
 	};
 };
-#else
-#include <vector>
 #endif // _MY_VECTOR_HPP_
